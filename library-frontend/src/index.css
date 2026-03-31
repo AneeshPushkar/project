@@ -564,9 +564,7 @@ input:focus, select:focus, textarea:focus {
 /* Auth container */
 .auth-wrapper {
   display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
 }
 
 table {
@@ -585,3 +583,30 @@ td {
 }
 td:first-child { border-radius: 12px 0 0 12px; }
 td:last-child { border-radius: 0 12px 12px 0; }
+
+/* ========================= */
+/* 🔷 AUTH RESPONSIVE LAYOUT */
+/* ========================= */
+@media (max-width: 1200px) {
+  .auth-left {
+    display: none;
+  }
+
+  .auth-wrapper {
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+  }
+
+  .auth-right {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .auth-card {
+    max-width: 480px;
+    width: 100%;
+  }
+}
