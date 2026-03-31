@@ -1,0 +1,138 @@
+/* LAYOUT */
+.app {
+  display: flex;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  padding: 30px 40px; /* 🔥 more breathing */
+  background: linear-gradient(135deg, #020617, #0f172a);
+  min-height: 100vh;
+  color: white;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  background: #020617;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 25px 18px;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* SIDEBAR LINKS */
+.sidebar a {
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+/* ACTIVE LINK */
+.sidebar a.active {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  background: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+/* GLASS CARD */
+.glass {
+  background: rgba(255,255,255,0.05);
+  padding: 22px;
+  border-radius: 18px;
+  transition: 0.3s;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* CARD HOVER */
+.glass:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* GRID FIX */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* 🔥 responsive */
+  gap: 25px;
+  margin-top: 15px;
+}
+
+/* TEXT INSIDE CARDS */
+.glass h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.glass p {
+  margin: 2px 0;
+  color: #cbd5f5;
+  font-size: 14px;
+}
+
+/* INPUT */
+input {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  margin-bottom: 25px;
+  background: rgba(255,255,255,0.06);
+  color: white;
+}
+
+/* BUTTON */
+button {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+/* HEADINGS */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
