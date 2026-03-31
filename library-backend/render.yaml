@@ -2,7 +2,7 @@ services:
   - type: web
     name: library-management-backend
     runtime: java
-    rootDir: .
+    rootDir: library-backend
     buildCommand: ./mvnw clean package -DskipTests
     startCommand: java -jar target/library-management-backend-0.0.1-SNAPSHOT.jar
     plan: free
