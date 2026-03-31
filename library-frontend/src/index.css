@@ -467,16 +467,17 @@ input:focus, select:focus, textarea:focus {
 }
 
 .auth-switch {
-  margin-top: 25px;
-  font-size: 14px;
+  margin-top: 28px;
+  font-size: 15px;
   text-align: center;
-  color: #94a3b8;
+  color: #e2e8f0; /* brighter for visibility */
 }
 
 .auth-switch span {
   color: #38bdf8;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .auth-switch span:hover {
