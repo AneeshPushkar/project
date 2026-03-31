@@ -566,6 +566,8 @@ input:focus, select:focus, textarea:focus {
 .auth-wrapper {
   display: flex;
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto; /* allow register/login card to fit on small screens */
 }
 
 table {
@@ -609,5 +611,19 @@ td:last-child { border-radius: 0 12px 12px 0; }
   .auth-card {
     max-width: 480px;
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-right {
+    padding: 20px 16px;
+  }
+
+  .auth-card {
+    padding: 28px 20px;
+  }
+
+  .auth-switch {
+    margin-top: 18px;
   }
 }
