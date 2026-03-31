@@ -458,6 +458,7 @@ input:focus, select:focus, textarea:focus {
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  margin-right: 24px; /* keep card away from right screen edge */
 }
 
 .auth-card h2 {
