@@ -10,8 +10,14 @@ export default function ReturnBook() {
 
   const submit = async () => {
     try {
+      if (!form.issueId.trim()) {
+        toast.error("Issue ID is required");
+        return;
+      }
+
       await API.post("/api/issues/return", {
-        issueId: Number(form.issueId),
+        // MongoDB ObjectId must be a string.
+        issueId: form.issueId.trim(),
         finePaid: form.finePaid
       });
 

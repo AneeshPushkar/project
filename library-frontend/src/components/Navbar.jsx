@@ -1,9 +1,14 @@
 import { LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const logout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
+    navigate("/login");
   };
 
   return (

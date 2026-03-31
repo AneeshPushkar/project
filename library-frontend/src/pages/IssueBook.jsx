@@ -24,9 +24,10 @@ export default function IssueBook() {
       }
 
       await API.post("/api/issues/issue", {
-        userId: Number(f.userId),  // ✅ Use specified user ID
-        bookId: Number(f.bookId),  // ✅ number
-        dueDate: f.dueDate         // ✅ correct format
+        // MongoDB IDs must be sent as strings, not numbers.
+        userId: f.userId.trim(),
+        bookId: f.bookId.trim(),
+        dueDate: f.dueDate
       });
 
       toast.success("Book Issued ✅");
