@@ -75,29 +75,11 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration configuration = new CorsConfiguration();
-
-        // Support both exact origins and wildcard patterns (e.g. https://*.vercel.app)
-        List<String> parsedOrigins = Arrays.stream(allowedOrigins.split(","))
-                .map(String::trim)
-                .filter(s -> !s.isBlank())
-                .toList();
-
-        List<String> exactOrigins = new ArrayList<>();
-        List<String> originPatterns = new ArrayList<>();
-
-        for (String origin : parsedOrigins) {
-            if (origin.contains("*")) {
-                originPatterns.add(origin);
-            } else {
-                exactOrigins.add(origin);
-            }
-        }
-
-        configuration.setAllowedOrigins(exactOrigins);
-        configuration.setAllowedOriginPatterns(originPatterns);
+        // Keep CORS permissive for hosted frontend deployments and preview URLs
+        configuration.setAllowedOriginPatterns(List.of("*"));
         configuration.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(true); // ✅ FIX
+        configuration.setAllowCredentials(false);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
